@@ -128,7 +128,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                <span className="gradient-text-secondary">Why Choose Me</span>
+                <span className="text-primary">Why Choose Me</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 With years of experience in full-stack development and AI, I bring a unique 
@@ -224,6 +224,18 @@ export default function Home() {
           </div>
         </section>
       </AnimatedSection>
+
+      {/* Footer Section */}
+      <footer className="w-full bg-background border-t border-border/40 mt-32 py-8">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+          <span className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} Abdul Samad. All rights reserved.</span>
+          <div className="flex gap-4">
+            <a href="https://linkedin.com/in/itxsammad1" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-primary transition-colors">LinkedIn</a>
+            <a href="https://github.com/itxsamad1" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-primary transition-colors">GitHub</a>
+            <a href="mailto:itxsamad@icloud.com" className="hover:text-primary transition-colors">Email</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

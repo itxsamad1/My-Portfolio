@@ -17,8 +17,8 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              <span className="gradient-text">Let&apos;s Connect</span>
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-primary">
+              Let&apos;s Connect
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               I&apos;m always excited to hear about new opportunities, interesting projects, 
@@ -31,9 +31,7 @@ export default function ContactPage() {
 
       {/* Contact Form Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <AnimatedSection>
-          <ContactForm />
-        </AnimatedSection>
+        <ContactForm />
       </section>
     </div>
   );

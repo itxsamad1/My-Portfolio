@@ -86,11 +86,12 @@ export default function ProjectsPage() {
 
       {/* Projects Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <AnimatedSection>
+        <AnimatedSection viewport={{ once: true, amount: 0 }}>
           {/* Filter Tabs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0 }}
             transition={{ duration: 0.6 }}
             className="flex flex-wrap justify-center gap-4 mb-12"
           >
@@ -127,6 +128,7 @@ export default function ProjectsPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-center mt-16"
           >

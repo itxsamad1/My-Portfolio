@@ -35,7 +35,7 @@ export default function Navbar() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center">
               <Code className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="font-bold text-xl gradient-text">
+            <span className="font-bold text-xl text-primary">
               Abdul Samad
             </span>
           </motion.div>

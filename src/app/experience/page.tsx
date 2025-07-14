@@ -116,8 +116,8 @@ export default function ExperiencePage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              <span className="gradient-text">Experience</span>
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-foreground">
+              Experience
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               My professional journey in software development, AI/ML, and DevOps. 
@@ -129,129 +129,100 @@ export default function ExperiencePage() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         {/* Work Experience */}
-        <AnimatedSection>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
-          >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center">
-                <Briefcase className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <h2 className="text-3xl font-bold">
-                <span className="gradient-text-secondary">Work Experience</span>
-              </h2>
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center">
+              <Briefcase className="w-5 h-5 text-primary-foreground" />
             </div>
-            
-            <div className="space-y-8">
-              {jobs.map((job, index) => (
+            <h2 className="text-3xl font-bold text-primary">
+              Work Experience
+            </h2>
+          </div>
+          <div className="space-y-8">
+            {jobs.map((job) => (
+              <div className="shadow-lg" key={job.role + job.company}>
                 <ExperienceCard
-                  key={index}
                   {...job}
                 />
-              ))}
-            </div>
-          </motion.div>
-        </AnimatedSection>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Education */}
-        <AnimatedSection>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
-          >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-secondary to-secondary/80 flex items-center justify-center">
-                <GraduationCap className="w-5 h-5 text-secondary-foreground" />
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-secondary to-secondary/80 flex items-center justify-center">
+              <GraduationCap className="w-5 h-5 text-secondary-foreground" />
+            </div>
+            <h2 className="text-3xl font-bold text-primary">
+              Education
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {education.map((edu) => (
+              <div
+                key={edu.degree + edu.institution}
+                className={cn(
+                  "p-6 rounded-2xl glass border border-border/50 shadow-lg",
+                  "hover:border-secondary/50 transition-all duration-500",
+                  "card-hover"
+                )}
+              >
+                <h3 className="text-xl font-bold text-foreground mb-2">
+                  {edu.degree}
+                </h3>
+                <p className="text-muted-foreground mb-2">{edu.institution}</p>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {edu.period} • {edu.location} • GPA: {edu.gpa}
+                </p>
+                <ul className="space-y-2">
+                  {edu.highlights.map((highlight, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0" />
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h2 className="text-3xl font-bold">
-                <span className="gradient-text-accent">Education</span>
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {education.map((edu, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={cn(
-                    "p-6 rounded-2xl glass border border-border/50",
-                    "hover:border-secondary/50 transition-all duration-500",
-                    "card-hover"
-                  )}
-                >
-                  <h3 className="text-xl font-bold text-foreground mb-2">
-                    {edu.degree}
-                  </h3>
-                  <p className="text-muted-foreground mb-2">{edu.institution}</p>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    {edu.period} • {edu.location} • GPA: {edu.gpa}
-                  </p>
-                  <ul className="space-y-2">
-                    {edu.highlights.map((highlight, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0" />
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </AnimatedSection>
+            ))}
+          </div>
+        </div>
 
         {/* Certifications */}
-        <AnimatedSection>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
-          >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center">
-                <Award className="w-5 h-5 text-accent-foreground" />
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center">
+              <Award className="w-5 h-5 text-accent-foreground" />
+            </div>
+            <h2 className="text-3xl font-bold text-primary">
+              Certifications
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {certifications.map((cert) => (
+              <div
+                key={cert.name + cert.credential}
+                className={cn(
+                  "p-6 rounded-2xl glass border border-border/50 text-center shadow-lg",
+                  "hover:border-accent/50 transition-all duration-500",
+                  "card-hover"
+                )}
+              >
+                <h3 className="text-lg font-bold text-foreground mb-2">
+                  {cert.name}
+                </h3>
+                <p className="text-muted-foreground mb-2">{cert.issuer}</p>
+                <p className="text-sm text-muted-foreground mb-3">
+                  {cert.date} • {cert.credential}
+                </p>
+                <div className="w-12 h-12 rounded-full bg-accent/10 mx-auto flex items-center justify-center">
+                  <Award className="w-6 h-6 text-accent" />
+                </div>
               </div>
-              <h2 className="text-3xl font-bold">
-                <span className="gradient-text">Certifications</span>
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {certifications.map((cert, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={cn(
-                    "p-6 rounded-2xl glass border border-border/50 text-center",
-                    "hover:border-accent/50 transition-all duration-500",
-                    "card-hover"
-                  )}
-                >
-                  <h3 className="text-lg font-bold text-foreground mb-2">
-                    {cert.name}
-                  </h3>
-                  <p className="text-muted-foreground mb-2">{cert.issuer}</p>
-                  <p className="text-sm text-muted-foreground mb-3">
-                    {cert.date} • {cert.credential}
-                  </p>
-                  <div className="w-12 h-12 rounded-full bg-accent/10 mx-auto flex items-center justify-center">
-                    <Award className="w-6 h-6 text-accent" />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </AnimatedSection>
+            ))}
+          </div>
+        </div>
 
         {/* Call to Action */}
         <motion.div
@@ -261,8 +232,8 @@ export default function ExperiencePage() {
           className="text-center"
         >
           <div className="glass rounded-2xl p-8 border border-border/50">
-            <h3 className="text-2xl font-bold mb-4">
-              <span className="gradient-text-secondary">Ready to work together?</span>
+            <h3 className="text-2xl font-bold mb-4 text-primary">
+              Ready to work together?
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               I&apos;m passionate about creating innovative solutions and always excited 

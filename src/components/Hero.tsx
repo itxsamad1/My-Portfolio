@@ -26,6 +26,7 @@ export default function Hero() {
             width={320}
             height={320}
             className="object-cover w-full h-full"
+            style={{ objectPosition: 'top center' }}
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               target.style.display = 'none';
@@ -41,28 +42,28 @@ export default function Hero() {
 
       {/* Content */}
       <div className="max-w-2xl text-center lg:text-left flex flex-col items-center lg:items-start">
-        <p className="text-lg text-blue-300 mb-2 font-medium">👋 Hello, I&apos;m</p>
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-white">
+        <p className="text-lg text-muted-foreground mb-2 font-medium">👋 Hello, I&apos;m</p>
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-foreground">
           Abdul Samad
         </h1>
-        <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-blue-400">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-primary">
           Full-Stack Engineer
         </h2>
-        <p className="text-lg text-gray-300 mb-8 max-w-xl">
+        <p className="text-lg text-muted-foreground mb-8 max-w-xl">
           I build scalable backend systems, modern web applications, and develop AI solutions that solve real-world problems. Passionate about clean code, performance, and creating seamless digital experiences.
         </p>
         {/* Social Icons */}
         <div className="flex gap-5 mb-8">
-          <a href="https://facebook.com/itxsammad1" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-blue-500 transition-colors">
+          <a href="https://facebook.com/itxsammad1" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-primary transition-colors">
             <Facebook className="w-7 h-7" />
           </a>
-          <a href="https://instagram.com/itxsammad1" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-pink-500 transition-colors">
+          <a href="https://instagram.com/itxsammad1" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-primary transition-colors">
             <Instagram className="w-7 h-7" />
           </a>
-          <a href="https://linkedin.com/in/itxsammad1" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-blue-400 transition-colors">
+          <a href="https://linkedin.com/in/itxsammad1" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-primary transition-colors">
             <Linkedin className="w-7 h-7" />
           </a>
-          <a href="https://github.com/itxsamad1" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-gray-200 transition-colors">
+          <a href="https://github.com/itxsamad1" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-primary transition-colors">
             <Github className="w-7 h-7" />
           </a>
         </div>
@@ -72,9 +73,9 @@ export default function Hero() {
             href="#contact"
             className={cn(
               "group relative inline-flex items-center justify-center px-8 py-4",
-              "bg-blue-600 text-white",
+              "bg-primary text-primary-foreground",
               "rounded-full font-semibold text-lg shadow-lg",
-              "hover:bg-blue-700 transition-all duration-300",
+              "hover:bg-primary/80 transition-all duration-300",
               "focus-ring"
             )}
           >
@@ -85,8 +86,8 @@ export default function Hero() {
             onClick={handleDownloadResume}
             className={cn(
               "group inline-flex items-center justify-center px-8 py-4",
-              "border-2 border-blue-600 rounded-full font-semibold text-lg text-blue-600",
-              "hover:bg-blue-600 hover:text-white transition-all duration-300",
+              "border-2 border-primary rounded-full font-semibold text-lg text-primary",
+              "hover:bg-primary hover:text-primary-foreground transition-all duration-300",
               "focus-ring"
             )}
           >
