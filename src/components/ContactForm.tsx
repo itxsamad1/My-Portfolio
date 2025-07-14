@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Send, Mail, Phone, MapPin, CheckCircle, AlertCircle, Facebook, Instagram, Linkedin, Github } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
+import { Send, Mail, Phone, MapPin, CheckCircle, AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type FormData = {

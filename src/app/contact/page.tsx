@@ -1,7 +1,6 @@
 "use client";
 
 import ContactForm from "@/components/ContactForm";
-import AnimatedSection from "@/components/AnimatedSection";
 import { motion } from "framer-motion";
 
 export default function ContactPage() {

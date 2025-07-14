@@ -1,7 +1,6 @@
 "use client";
 
 import ExperienceCard from "@/components/ExperienceCard";
-import AnimatedSection from "@/components/AnimatedSection";
 import { motion } from "framer-motion";
 import { Briefcase, GraduationCap, Award, Download } from "lucide-react";
 import { cn } from "@/lib/utils";
