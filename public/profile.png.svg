@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="320" height="320" fill="url(#grad)" rx="160"/>
+  
+  <!-- Profile icon -->
+  <g filter="url(#shadow)">
+    <!-- Head -->
+    <circle cx="160" cy="120" r="40" fill="white" opacity="0.95"/>
+    
+    <!-- Body -->
+    <path d="M80 240 Q160 200 240 240 L240 280 L80 280 Z" fill="white" opacity="0.95"/>
+    
+    <!-- Eyes -->
+    <circle cx="150" cy="115" r="3" fill="#667eea"/>
+    <circle cx="170" cy="115" r="3" fill="#667eea"/>
+    
+    <!-- Smile -->
+    <path d="M145 130 Q160 140 175 130" stroke="#667eea" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="160" y="300" text-anchor="middle" fill="white" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600">
+    Abdul Samad
+  </text>
+</svg>

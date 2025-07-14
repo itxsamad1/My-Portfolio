@@ -1,103 +1,229 @@
-import Image from "next/image";
+"use client";
+import Hero from "@/components/Hero";
+import AnimatedSection from "@/components/AnimatedSection";
+import { motion } from "framer-motion";
+import { 
+  Code, 
+  Database, 
+  Brain, 
+  Cloud, 
+  Zap, 
+  Shield, 
+  Globe, 
+  Smartphone,
+  ArrowRight,
+  CheckCircle
+} from "lucide-react";
+import { cn } from "@/lib/utils";
+
+const skills = [
+  {
+    category: "Backend Development",
+    icon: Database,
+    items: ["Node.js", "Python", "Go", "REST APIs", "GraphQL", "Microservices"],
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
+    category: "Frontend Development",
+    icon: Code,
+    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    color: "from-purple-500 to-pink-500"
+  },
+  {
+    category: "AI & Machine Learning",
+    icon: Brain,
+    items: ["TensorFlow", "PyTorch", "OpenAI API", "Computer Vision", "NLP"],
+    color: "from-green-500 to-emerald-500"
+  },
+  {
+    category: "DevOps & Cloud",
+    icon: Cloud,
+    items: ["Docker", "Kubernetes", "AWS", "CI/CD", "Monitoring"],
+    color: "from-orange-500 to-red-500"
+  }
+];
+
+const highlights = [
+  "Scalable microservices architecture",
+  "Modern React/Next.js applications",
+  "AI/ML solutions for real-world problems",
+  "DevOps automation and cloud deployment",
+  "Clean code and best practices",
+  "Performance optimization and monitoring"
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="space-y-32">
+      <Hero />
+      
+      {/* About Section */}
+      <AnimatedSection>
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl lg:text-4xl font-bold mb-4"
+            >
+              <span className="gradient-text">What I Do</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-xl text-muted-foreground max-w-3xl mx-auto"
+            >
+              I specialize in building end-to-end solutions that combine cutting-edge 
+              technology with practical business needs.
+            </motion.p>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {skills.map((skill, index) => (
+              <motion.div
+                key={skill.category}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="group relative"
+              >
+                <div className={cn(
+                  "p-6 rounded-2xl glass border border-border/50",
+                  "hover:border-primary/50 transition-all duration-300",
+                  "card-hover"
+                )}>
+                  <div className={cn(
+                    "w-12 h-12 rounded-xl bg-gradient-to-br mb-4",
+                    "flex items-center justify-center text-white",
+                    skill.color
+                  )}>
+                    <skill.icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-3">{skill.category}</h3>
+                  <ul className="space-y-2">
+                    {skill.items.map((item) => (
+                      <li key={item} className="flex items-center text-sm text-muted-foreground">
+                        <CheckCircle className="w-4 h-4 mr-2 text-primary" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Highlights Section */}
+      <AnimatedSection>
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+                <span className="gradient-text-secondary">Why Choose Me</span>
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                With years of experience in full-stack development and AI, I bring a unique 
+                combination of technical expertise and creative problem-solving to every project.
+              </p>
+              
+              <div className="space-y-4">
+                {highlights.map((highlight, index) => (
+                  <motion.div
+                    key={highlight}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="flex items-center space-x-3"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Zap className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-foreground">{highlight}</span>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.a
+                href="/projects"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={cn(
+                  "inline-flex items-center mt-8 px-6 py-3",
+                  "bg-gradient-to-r from-primary to-primary/80 text-primary-foreground",
+                  "rounded-full font-semibold shadow-lg",
+                  "hover:shadow-xl transition-all duration-300",
+                  "focus-ring"
+                )}
+              >
+                <span>View My Work</span>
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </motion.a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="grid grid-cols-2 gap-4">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="neumorphism p-6 rounded-2xl"
+                >
+                  <Globe className="w-8 h-8 text-primary mb-3" />
+                  <h3 className="font-semibold mb-2">Global Reach</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Experience working with international teams and clients
+                  </p>
+                </motion.div>
+                
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="neumorphism p-6 rounded-2xl"
+                >
+                  <Shield className="w-8 h-8 text-primary mb-3" />
+                  <h3 className="font-semibold mb-2">Security First</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Built-in security best practices in every solution
+                  </p>
+                </motion.div>
+                
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="neumorphism p-6 rounded-2xl"
+                >
+                  <Smartphone className="w-8 h-8 text-primary mb-3" />
+                  <h3 className="font-semibold mb-2">Responsive Design</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Mobile-first approach for all applications
+                  </p>
+                </motion.div>
+                
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="neumorphism p-6 rounded-2xl"
+                >
+                  <Zap className="w-8 h-8 text-primary mb-3" />
+                  <h3 className="font-semibold mb-2">Performance</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Optimized for speed and user experience
+                  </p>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </AnimatedSection>
     </div>
   );
 }
