@@ -8,7 +8,7 @@ export default function Hero() {
   // Download handler for resume
   const handleDownloadResume = useCallback(() => {
     const link = document.createElement("a");
-    link.href = "/Abdul_Samad_Backend_Engineer.pdf";
+    link.href = "/assets/Abdul_Samad_Backend_Engineer.pdf";
     link.download = "Abdul_Samad_Backend_Engineer.pdf";
     document.body.appendChild(link);
     link.click();

@@ -265,8 +265,8 @@ export default function ExperiencePage() {
               <span className="gradient-text-secondary">Ready to work together?</span>
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              I'm passionate about creating innovative solutions and always excited 
-              to take on new challenges. Let's discuss how we can bring your ideas to life!
+              I&apos;m passionate about creating innovative solutions and always excited 
+              to take on new challenges. Let&apos;s discuss how we can bring your ideas to life!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
